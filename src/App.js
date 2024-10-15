@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import QrCode from './Components/QrCode';
+import Camera from './Components/Camera';
+import View3DImage from './Components/View3DImage';
+import UploadAndGenerateQR from './Components/UploadAndGenerateQR';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          {/* <Route path="/" element={<QrCode />} /> */}
+          <Route path="/" exact element={<UploadAndGenerateQR />} />
+          
+          {/* <Route path="*" element={<Error404 />} /> */}
+          <Route path="/camera" element={<Camera />} />
+          <Route path="/view-model/:id" element={<View3DImage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

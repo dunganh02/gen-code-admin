@@ -1,0 +1,5 @@
+version: "3"
+services:
+  admin:
+    image: ar.demo/admin
+    build: .
