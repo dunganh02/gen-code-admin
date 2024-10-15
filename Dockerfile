@@ -1,5 +1,5 @@
 # Build stage #
-FROM node:18 as Builder
+FROM node:20 as Builder
 WORKDIR /app
 COPY . .
 RUN npm i
